@@ -9,7 +9,7 @@ if ((Test-Admin) -eq $false)  {
     if ($elevated) {
         # Elevating didn't work or wasn't accepted, aborting.
     } else {
-        Start-Process powershell.exe -Verb RunAs -ArgumentList ('-noexit -file "{0}" -elevated' -f ($myinvocation.MyCommand.Definition))
+        Start-Process powershell.exe -Verb RunAs -ArgumentList ('-file "{0}" -elevated' -f ($myinvocation.MyCommand.Definition))
     }
     exit
 }
